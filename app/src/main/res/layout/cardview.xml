@@ -11,6 +11,7 @@
         card_view:cardCornerRadius="8dp"
         card_view:cardElevation="8dp"
         card_view:contentPaddingRight="20dp"
+        card_view:contentPaddingLeft="20dp"
         android:id="@+id/cv"
         >
 
@@ -39,8 +40,8 @@
                 android:layout_height="48dp"
                 android:background="@drawable/copy_icon"
                 android:id="@+id/recyclerViewItemCopyButton"
-                android:layout_below="@+id/person_age"
-                android:layout_alignParentRight="true" />
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
 
 
         </RelativeLayout>
