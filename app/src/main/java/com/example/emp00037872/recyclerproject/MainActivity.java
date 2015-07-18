@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initializeData();
+        populateDate(200);
         itemAnimator = new DefaultItemAnimator();
         adapter = new RVAdapter(persons);
         llm = new LinearLayoutManager(this);
@@ -70,8 +70,12 @@ public class MainActivity extends Activity {
         persons.add(new Person("Test 13 ", "Text 13"));
         persons.add(new Person("Test 14 ", "Text 14"));
         persons.add(new Person("Test 15 ", "Text 15"));
-
-
+    }
+    private void populateDate(int count){
+        persons = new ArrayList<>();
+        for(int i=0;i<count;i++){
+            persons.add(new Person("Test " + (i+1), "Text "+(i+1)));
+        }
 
     }
 

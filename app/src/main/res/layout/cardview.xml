@@ -10,14 +10,13 @@
         android:layout_height="150dp"
         card_view:cardCornerRadius="8dp"
         card_view:cardElevation="8dp"
+        card_view:contentPaddingRight="20dp"
         android:id="@+id/cv"
         >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="30dp"
-            android:paddingRight="20dp"
 
             >
 
