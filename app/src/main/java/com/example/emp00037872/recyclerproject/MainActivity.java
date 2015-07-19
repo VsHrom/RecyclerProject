@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
 //                    public void onItemClick(View view, int position) {
 //                        int itemPosition = rv.getChildPosition(view);
 //                        String item = persons.get(itemPosition).getName();
-//                        Toast.makeText(getApplicationContext(), item, Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getApplicationContext(), item, Toast.LENGTH_SHORT).show();
 //                    }
 //                })
 //        );

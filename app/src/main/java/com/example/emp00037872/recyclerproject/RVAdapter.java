@@ -1,6 +1,5 @@
 package com.example.emp00037872.recyclerproject;
 
-import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -30,9 +30,12 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
             personAge = (TextView) itemView.findViewById(R.id.person_age);
             copyButton = (Button) itemView.findViewById(R.id.recyclerViewItemCopyButton);
             copyButtonListener = new CopyButtonListener();
+            //itemView.setOnClickListener((View.OnClickListener) this);
             copyButton.setOnClickListener(copyButtonListener);
 
+
         }
+
     }
 
     List<Person> persons;
@@ -54,10 +57,16 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(PersonViewHolder personViewHolder, int i) {
+    public void onBindViewHolder(final PersonViewHolder personViewHolder, int i) {
         personViewHolder.personName.setText(persons.get(i).name);
         personViewHolder.personAge.setText(persons.get(i).age);
         personViewHolder.copyButtonListener.setRecord(persons.get(i));
+        personViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext().getApplicationContext()," Item on position "+personViewHolder.getPosition(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
